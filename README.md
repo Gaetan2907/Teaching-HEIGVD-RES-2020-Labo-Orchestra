@@ -106,13 +106,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 | | *Insert your diagram here...* |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | *Enter your response here...* |
+| | *This is the musicians when they are active* |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
-| | *Enter your response here...* |
+| | *The auditor are receiving the UDP datagrams. The auditor must keep trace of the received datagram to send them to the client with a TCP protocol.* |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | *Enter your response here...* |
+| | *The sound of the instrument* |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | *Enter your response here...* |
+| | *We need a JSON structure, we will update this structure every second. We will query these data structures when the client will ask who is playing.* |
 
 
 ## Task 2: implement a "musician" Node.js application
@@ -120,21 +120,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-| | *Enter your response here...*  |
+| | *We can use a JSONParser*                                    |
 |Question | What is **npm**?  |
-| | *Enter your response here...*  |
+| | *It's a package manager for modules and libraries* |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag?  |
-| | *Enter your response here...*  |
+| | *It installs a package and the dependencies of this package. The `--save` flag offers the possibility to control where and how the dependencies are saved.* |
 |Question | How can we use the `https://www.npmjs.com/` web site?  |
-| | *Enter your response here...*  |
+| | *We can use it to have information on the command of npm* |
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
-| | *Enter your response here...*  |
+| | *We can use the uuid module* |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | *Enter your response here...*  |
+| | *We can use Event Loop and the function setTimeout()* |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | *Enter your response here...*  |
+| | *We can use `dgram.Socket`* |
 |Question | In Node.js, how can we **access the command line arguments**? |
-| | *Enter your response here...*  |
+| | *We access the command line arguments with `process.argv`* |
 
 
 ## Task 3: package the "musician" app in a Docker image

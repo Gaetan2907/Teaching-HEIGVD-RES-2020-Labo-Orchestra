@@ -1,0 +1,6 @@
+/*
+ *  Define the default multicast and port
+ */
+
+exports.PROTOCOL_MULTICAST_ADDRESS = "239.255.99.111"
+exports.PROTOCOL_PORT = 1111; 

@@ -1,0 +1,14 @@
+{
+  "name": "auditor",
+  "version": "1.0.0",
+  "description": "Listen the music played by the musicians in UDP multicast ",
+  "main": "auditor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gaëtan Daubresse",
+  "license": "ISC",
+  "dependencies": {
+    "dgram": "^1.0.1"
+  }
+}

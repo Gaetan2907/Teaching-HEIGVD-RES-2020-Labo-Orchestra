@@ -4,5 +4,5 @@ COPY src /opt/app
 
 RUN apt-get update && apt-get install -y vim 
 
-ENTRYPOINT ["node", "/opt/app/multicast.js"]
+ENTRYPOINT ["node", "/opt/app/musician.js"]
 

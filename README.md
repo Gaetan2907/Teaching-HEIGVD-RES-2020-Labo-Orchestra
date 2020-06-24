@@ -104,7 +104,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | --- | --- |
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
-| | *Insert your diagram here...* |
+| | ![](/home/gaetan/ownCloud/HEIG-VD/Semestre4/RES/Teaching-HEIGVD-RES-2020-Labo-Orchestra/images/img4.jpg) |
 |Question | Who is going to **send UDP datagrams** and **when**? |
 | | *This is the musicians when they are active* |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
@@ -162,13 +162,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
 | | *We have to create a socket and use the method addMembership on this socket.* |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
-| | *Enter your response here...* |
+| | *We constructed our map dictionnary in the protocol.js file,  it looks like this :*<br /><br />![](/home/gaetan/ownCloud/HEIG-VD/Semestre4/RES/Teaching-HEIGVD-RES-2020-Labo-Orchestra/images/img1.png)<br /><br /><br />*In this way we can bind each instrument with his specific sound.* |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |
-| | *Enter your response here...* |
+| | *We use it to send the time where each sound of the instrument is sended. Then the auditor can compare the current time with the time of the sended datagram* |
 |Question | When and how do we **get rid of inactive players**?  |
-| | *Enter your response here...* |
+| | *We use a map that stores every alive musicians. A method checks every 0.5 second if a specific musician is still alive (aliveSinceTime - currentTime < 5 seconds) and if it's note the case, we erase that musician from the map of alive musicians* |
 |Question | How do I implement a **simple TCP server** in Node.js?  |
-| | *Enter your response here...* |
+| | *We construct our TCP server as follow :*<br /><br />![](/home/gaetan/ownCloud/HEIG-VD/Semestre4/RES/Teaching-HEIGVD-RES-2020-Labo-Orchestra/images/img2.png) |
 
 
 ## Task 5: package the "auditor" app in a Docker image
@@ -176,7 +176,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we validate that the whole system works, once we have built our Docker image? |
-| | *Enter your response here...* |
+| | *We used the given validate.sh, we also checked manually with netcat and tcpdump.*<br /><br />![](/home/gaetan/ownCloud/HEIG-VD/Semestre4/RES/Teaching-HEIGVD-RES-2020-Labo-Orchestra/images/img3.png) |
 
 
 ## Constraints

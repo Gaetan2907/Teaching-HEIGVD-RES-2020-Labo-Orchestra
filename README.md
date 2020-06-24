@@ -142,17 +142,17 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**?|
-| | *Enter your response here...*  |
+| | *First we need to write a Dockerfile with the correct configuration (name of the image, sources, command to run). Once it is done we build the image with the following command : `docker build -t res/musician .`* |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?  |
-| | *Enter your response here...*  |
+| | *It gives the possibility to pass an argmuent to the node.js application while running the docker. We write the following line in our Dockerfile : `ENTRYPOINT ["node", "/opt/app/musician.js"]`* |
 |Question | After building our Docker image, how do we use it to **run containers**?  |
-| | *Enter your response here...*  |
+| | *We use for example the following command : `docker run -d --name musician res/musician piano` . If we don't pass any argument to the program it throws an error and stop the container.* |
 |Question | How do we get the list of all **running containers**?  |
-| | *Enter your response here...*  |
+| | *`docker ps`* |
 |Question | How do we **stop/kill** one running container?  |
-| | *Enter your response here...*  |
+| | *`docker kill container_name`* |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?  |
-| | *Enter your response here...*  |
+| | *We can use wireshark or tcpdump* |
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -160,7 +160,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | ---  |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*  |
+| | *We have to create a socket and use the method addMembership on this socket.* |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**?  |
 | | *Enter your response here...* |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?  |

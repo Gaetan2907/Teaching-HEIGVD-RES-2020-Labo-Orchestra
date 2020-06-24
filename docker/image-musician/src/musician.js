@@ -1,6 +1,10 @@
-var protocol = require ('./protocol'); 
+var protocol = require ('./protocol');
 
 var dgram = require ('dgram');
+var uuid = require('uuid');
+var moment = require('moment');
+
+
 
 var server = dgram.createSocket('udp4');
 
@@ -9,38 +13,28 @@ function Play(instrument){
 	function send(message){
 		server.send(message, 0, message.length, protocol.PROTOCOL_PORT,
 		 protocol.PROTOCOL_MULTICAST_ADDRESS, function(err, bytes){
-	        console.log("Sending payload: " + sound + " via port " +
+	        console.log("Sending payload: " + protocol.instruments.get(instrument) + " via port " +
 	        server.address().port + " and address " + server.address().address);
         });
 	}
 
-	switch(instrument){
-	    case "piano" :
-	        var sound = "ti-ta-ti";
-	        break;
-        case "trumpet" :
-            var sound = "pouet";
-            break;
-        case "flute" :
-            var sound = "trulu";
-            break;
-        case "vilolin" :
-            var sound = "gzi-gzi";
-            break;
-        case "drum" :
-            var sound = "boum-boum";
-            break;
-        default :
-            throw 'Unknown instrument ! ';
-	}
+	message = new Buffer(protocol.instruments.get(instrument));
+	var message = Buffer.from(JSON.stringify({
+		uuid: uuid.v4(),
+		sound: protocol.instruments.get(instrument),
+		instrument: instrument,
+		activeSince: moment().format()
+	}))
 
-	message = new Buffer(sound);
+	console.log(message);
 
 	send(message);
 	setInterval(send, 500, message);
 
 }
 
+
+
 var instrument = process.argv[2];
 
-var musician = new Play(instrument);
+Play(instrument);
